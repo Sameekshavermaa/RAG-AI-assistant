@@ -24,9 +24,9 @@ The assistant retrieves relevant context from documents and generates an answer.
 
 ![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/bdf88c62671a57188f05ec68b476d909ee361b43/Screenshot%202026-03-16%20at%2001.20.30.png)
 
-![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/bdf88c62671a57188f05ec68b476d909ee361b43/Screenshot%202026-03-16%20at%2001.20.30.png)
+![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/8016ae2e34796a17956c119420228f413df6c11f/Screenshot%202026-03-16%20at%2020.50.10.png)
 
-![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/bdf88c62671a57188f05ec68b476d909ee361b43/Screenshot%202026-03-16%20at%2001.20.30.png)
+![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/8016ae2e34796a17956c119420228f413df6c11f/Screenshot%202026-03-16%20at%2020.35.43.png)
 
 ---
 
