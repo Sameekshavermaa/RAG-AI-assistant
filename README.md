@@ -2,7 +2,6 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
 ![AI](https://img.shields.io/badge/AI-RAG-green)
-
 An AI-powered knowledge assistant that answers questions using **custom documents**.
 Built using **Retrieval-Augmented Generation (RAG)** so responses are grounded in real context instead of hallucinating.
 
@@ -86,7 +85,7 @@ rag-ai-assistant
 
 Clone the repository
 
-git clone https://github.com/yourusername/rag-ai-assistant.git
+git clone https://github.com/sameekshavermaa/rag-ai-assistant.git
 
 Install dependencies
 
