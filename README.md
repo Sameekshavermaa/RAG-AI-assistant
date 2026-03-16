@@ -22,7 +22,11 @@ The assistant retrieves relevant context from documents and generates an answer.
 
 # 🖼 App Preview
 
-![AI Assistant Preview](app_preview.png)
+![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/bdf88c62671a57188f05ec68b476d909ee361b43/Screenshot%202026-03-16%20at%2001.20.30.png)
+
+![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/bdf88c62671a57188f05ec68b476d909ee361b43/Screenshot%202026-03-16%20at%2001.20.30.png)
+
+![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/bdf88c62671a57188f05ec68b476d909ee361b43/Screenshot%202026-03-16%20at%2001.20.30.png)
 
 ---
 
