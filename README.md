@@ -1,8 +1,9 @@
 # 🤖 AI Knowledge Assistant (RAG Powered)
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
-![AI](https://img.shields.io/badge/AI-RAG-green)
-
+![LangChain](https://img.shields.io/badge/LangChain-RAG-green)
+![FAISS](https://img.shields.io/badge/VectorDB-FAISS-orange)
+![License](https://img.shields.io/badge/License-MIT-purple)
 An AI-powered knowledge assistant that answers questions using **custom documents**.
 Built using **Retrieval-Augmented Generation (RAG)** so responses are grounded in real context instead of hallucinating.
 
@@ -29,26 +30,29 @@ The assistant retrieves relevant context from documents and generates an answer.
 ![image alt](https://github.com/Sameekshavermaa/RAG-AI-assistant/blob/8016ae2e34796a17956c119420228f413df6c11f/Screenshot%202026-03-16%20at%2020.35.43.png)
 
 ---
+## ✨ Key Features
 
-# ✨ Features
-
-✔ AI answers based on your documents
-✔ Multi-file document retrieval
-✔ Source file references
-✔ Clean Streamlit interface
-✔ Vector search using FAISS
+- 🔎 Document-based question answering
+- 🧠 Retrieval-Augmented Generation (RAG)
+- 📚 Multi-document knowledge base
+- ⚡ Fast semantic search using FAISS
+- 🎨 Clean Streamlit UI
+- 📂 Source references for transparency
 
 ---
+## 🧠 How It Works
 
-# 🧠 How It Works
-
-1️⃣ Documents are stored in the **data folder**
-
-2️⃣ Text is converted into **embeddings using Sentence Transformers**
-
-3️⃣ Embeddings are stored in **FAISS vector database**
-
-4️⃣ When a user asks a question:
+User Question  
+↓  
+Convert the question to an embedding  
+↓  
+Search similar chunks in the FAISS vector database  
+↓  
+Retrieve relevant document context  
+↓  
+Send context + question to LLM  
+↓  
+Generate grounded AI response
 
 * The system retrieves relevant text chunks
 * Sends them to the LLM
@@ -69,21 +73,18 @@ This technique is called **Retrieval-Augmented Generation (RAG)**.
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
-rag-ai-assistant
-│
+app/
 ├── app_web.py
 ├── requirements.txt
 ├── README.md
-│
 └── data
-    ├── ai.txt
-    ├── machine_learning.txt
-    ├── deep_learning.txt
-    ├── nlp.txt
-    └── computer_vision.txt
-
+    ├── ai.txt
+    ├── machine_learning.txt
+    ├── deep_learning.txt
+    ├── nlp.txt
+    └── computer_vision.txt
 ---
 
 # ⚙ Installation
@@ -105,7 +106,16 @@ Open browser
 http://localhost:8501
 
 ---
+## 💬 Example Query
 
+Question:
+What is the difference between Machine Learning and Deep Learning?
+
+AI Response:
+Machine Learning is a subset of AI where systems learn from data.
+Deep Learning is a subset of machine learning that uses neural networks with multiple layers to learn complex patterns.
+
+---
 # 📌 Future Improvements
 
 * ChatGPT-style conversation UI
