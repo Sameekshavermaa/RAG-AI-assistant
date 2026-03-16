@@ -1,34 +1,115 @@
-# RAG AI Knowledge Assistant
+# 🤖 AI Knowledge Assistant (RAG Powered)
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![AI](https://img.shields.io/badge/AI-RAG-green)
+An AI-powered knowledge assistant that answers questions using **custom documents**.
+Built using **Retrieval-Augmented Generation (RAG)** so responses are grounded in real context instead of hallucinating.
 
-This project is a Retrieval Augmented Generation (RAG) web app built with Streamlit.
+---
 
-The AI answers questions using custom documents stored in the data folder.
+# 🚀 Demo
 
-Features:
-- Multi-file document retrieval
-- AI answers grounded in context
-- Source document verification
-- Question history
-- Clean Streamlit interface
+Ask questions about AI concepts like:
 
-Tech Stack:
-- Python
-- Streamlit
-- LangChain
-- FAISS Vector Database
-- Sentence Transformers
-- Ollama LLM
+* What is Machine Learning?
+* Difference between Machine Learning and Deep Learning.
+* What are the applications of AI?
 
-How to Run:
+The assistant retrieves relevant context from documents and generates an answer.
 
-1. Install requirements
+---
+
+# 🖼 App Preview
+
+![AI Assistant Preview](app_preview.png)
+
+---
+
+# ✨ Features
+
+✔ AI answers based on your documents
+✔ Multi-file document retrieval
+✔ Source file references
+✔ Clean Streamlit interface
+✔ Vector search using FAISS
+
+---
+
+# 🧠 How It Works
+
+1️⃣ Documents are stored in the **data folder**
+
+2️⃣ Text is converted into **embeddings using Sentence Transformers**
+
+3️⃣ Embeddings are stored in **FAISS vector database**
+
+4️⃣ When a user asks a question:
+
+* The system retrieves relevant text chunks
+* Sends them to the LLM
+* Generates a grounded response
+
+This technique is called **Retrieval-Augmented Generation (RAG)**.
+
+---
+
+# 🛠 Tech Stack
+
+* Python
+* Streamlit
+* LangChain
+* FAISS
+* Sentence Transformers
+* Ollama LLM
+
+---
+
+# 📂 Project Structure
+
+rag-ai-assistant
+│
+├── app_web.py
+├── requirements.txt
+├── README.md
+│
+└── data
+    ├── ai.txt
+    ├── machine_learning.txt
+    ├── deep_learning.txt
+    ├── nlp.txt
+    └── computer_vision.txt
+
+---
+
+# ⚙ Installation
+
+Clone the repository
+
+git clone https://github.com/yourusername/rag-ai-assistant.git
+
+Install dependencies
 
 pip install -r requirements.txt
 
-2. Run the app
+Run the app
 
 streamlit run app_web.py
 
-Then open:
+Open browser
 
 http://localhost:8501
+
+---
+
+# 📌 Future Improvements
+
+* ChatGPT-style conversation UI
+* Upload your own documents
+* Export answers as PDF
+* Deploy online
+
+---
+
+# 👩‍💻 Author
+
+Sameeksha Verma
