@@ -4,6 +4,7 @@
 ![LangChain](https://img.shields.io/badge/LangChain-RAG-green)
 ![FAISS](https://img.shields.io/badge/VectorDB-FAISS-orange)
 ![License](https://img.shields.io/badge/License-MIT-purple)
+
 An AI-powered knowledge assistant that answers questions using **custom documents**.
 Built using **Retrieval-Augmented Generation (RAG)** so responses are grounded in real context instead of hallucinating.
 
@@ -75,16 +76,20 @@ This technique is called **Retrieval-Augmented Generation (RAG)**.
 
 ## 📂 Project Structure
 
-app/
+```
+rag-ai-assistant/
+│
 ├── app_web.py
 ├── requirements.txt
 ├── README.md
-└── data
+│
+└── data/
     ├── ai.txt
     ├── machine_learning.txt
     ├── deep_learning.txt
     ├── nlp.txt
     └── computer_vision.txt
+```
 ---
 
 # ⚙ Installation
