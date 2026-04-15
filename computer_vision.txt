@@ -1,2 +1,0 @@
-Computer Vision (CV) is a field of AI that allows machines to interpret and process visual information from the world. 
-Applications include facial recognition, object detection, self-driving cars, and medical imaging.
