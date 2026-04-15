@@ -1,9 +1,0 @@
-Machine learning allows systems to improve automatically through experience.
-Supervised learning uses labeled data to train models.
-Unsupervised learning finds patterns in unlabeled data.
-Common algorithms include linear regression, decision trees, k-means clustering, and random forests.
-Reinforcement learning uses feedback from actions to improve decision making.
-Machine Learning (ML) is a subset of AI that allows computers to learn from data without being explicitly programmed. 
-ML algorithms detect patterns and make predictions based on the data provided. 
-Examples include spam email detection, recommendation systems, and fraud detection.
-Machine learning can be supervised, unsupervised, or reinforcement-based.
