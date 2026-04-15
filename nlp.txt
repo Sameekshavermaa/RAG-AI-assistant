@@ -1,2 +1,0 @@
-Natural Language Processing (NLP) is a branch of AI that helps computers understand, interpret, and generate human language. 
-NLP is used in chatbots, translation apps, sentiment analysis, and voice assistants like Siri or Alexa.
