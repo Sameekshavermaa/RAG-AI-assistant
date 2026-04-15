@@ -83,13 +83,16 @@ if question_input:
 
     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
     
-    # FIX 2: Switch to mixtral with 32k context window
-    response = client.chat.completions.create(
-        model="mixtral-8x7b-32768",
-        messages=[{"role": "user", "content": prompt}]
-    )
-    answer = response.choices[0].message.content
+    try:
+        response = client.chat.completions.create(
+            model="mixtral-8x7b-32768",
+            messages=[{"role": "user", "content": prompt}]
+        )
+        answer = response.choices[0].message.content
 
+    except Exception as e:
+        st.error(f"Groq API Error: {str(e)}")  # shows the real error
+        st.stop()
     st.session_state.history.append({
         "question": question_input,
         "answer": answer,
