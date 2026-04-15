@@ -7,6 +7,14 @@ import numpy as np
 import ollama
 import os
 
+data_folder = os.path.join(os.path.dirname(__file__), "Data")
+
+if not os.path.exists(data_folder):
+    st.error("Data folder not found. Please check your repository structure.")
+    st.stop()
+
+for filename in os.listdir(data_folder):
+    ...
 # ------------------------
 # Streamlit page config
 # ------------------------
@@ -33,7 +41,7 @@ question_input = st.sidebar.text_input("Ask a question:")
 st.title("🧠 AI Knowledge Hub")
 with st.spinner("📦 Loading documents and building vector database..."):
     documents = []
-    data_folder = "data/"
+    data_folder = "Data"  # capital D — must match the repo folder exactly
     for filename in os.listdir(data_folder):
         if filename.endswith(".txt"):
             loader = TextLoader(os.path.join(data_folder, filename))
