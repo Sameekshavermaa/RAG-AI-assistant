@@ -12,6 +12,7 @@ Built using **Retrieval-Augmented Generation (RAG)** so responses are grounded i
 
 # 🚀 Demo
 
+Link: https://rag-ai-assistant-jqoukck5ljt9lsch6qpcpq.streamlit.app/
 Ask questions about AI concepts like:
 
 * What is Machine Learning?
