@@ -1,5 +1,0 @@
-Artificial Intelligence is the simulation of human intelligence in machines. 
-It allows computers to perform tasks that normally require human thinking. 
-Machine learning is a subset of AI where systems learn from data instead of being explicitly programmed. 
-Deep learning is a specialized form of machine learning that uses neural networks with many layers. 
-AI is used in many industries such as healthcare for disease detection, finance for fraud detection, transportation for self-driving cars, and education for personalized learning systems.
