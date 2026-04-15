@@ -4,7 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
-import ollama
+from groq import Groq
 import os
 
 data_folder = os.path.join(os.path.dirname(__file__), "Data")
@@ -96,12 +96,13 @@ Answer:
 """
 
     # Call LLM
-    response = ollama.chat(
-        model="llama3",
-        messages=[{"role": "user", "content": prompt}]
-    )
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
-    answer_text = response["message"]["content"]
+response = client.chat.completions.create(
+    model="llama3-8b-8192",   # same Llama 3, hosted by Groq
+    messages=[{"role": "user", "content": prompt}]
+)
+answer = response.choices[0].message.content
 
     # Save in history
     st.session_state.history.append({
