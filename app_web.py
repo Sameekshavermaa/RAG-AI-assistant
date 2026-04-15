@@ -73,27 +73,22 @@ if "history" not in st.session_state:
 if question_input:
     question_embedding = model.encode([question_input])
     D, I = index.search(np.array(question_embedding), k=3)
+    
+    # FIX 1: Truncate context to 2000 chars
     context = "\n".join([texts[i] for i in I[0]])
+    context = context[:2000]
 
-    prompt = f"""
-You are an AI assistant. Answer the question ONLY using the context below.
-If the answer is not in the context, say "I don't know."
-
-Context:
-{context}
-
-Question:
-{question_input}
-
-Answer:
-"""
+    # FIX 3: Tighter prompt
+    prompt = f"Answer ONLY using this context. If unsure, say 'I don't know'.\n\nContext:\n{context}\n\nQuestion: {question_input}\n\nAnswer:"
 
     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+    
+    # FIX 2: Switch to mixtral with 32k context window
     response = client.chat.completions.create(
-        model="llama3-8b-8192",
+        model="mixtral-8x7b-32768",
         messages=[{"role": "user", "content": prompt}]
     )
-    answer = response.choices[0].message.content  # ← only this, no answer_text
+    answer = response.choices[0].message.content
 
     st.session_state.history.append({
         "question": question_input,
