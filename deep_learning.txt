@@ -1,9 +1,0 @@
-Deep learning uses neural networks with many layers to model complex patterns.
-It works well for tasks like image recognition, speech recognition, and natural language processing.
-Popular architectures include Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs).
-Deep learning models require large amounts of data and high computational power.
-Techniques like dropout and batch normalization improve deep learning performance.
-Deep Learning (DL) is a specialized type of machine learning that uses artificial neural networks with multiple layers. 
-Deep learning excels at handling large and complex datasets, such as images, audio, and text. 
-Examples include self-driving cars, speech recognition, and advanced image recognition. 
-While all deep learning is machine learning, not all machine learning is deep learning.
