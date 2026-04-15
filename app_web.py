@@ -7,14 +7,6 @@ import numpy as np
 from groq import Groq
 import os
 
-data_folder = os.path.join(os.path.dirname(__file__), "Data")
-
-if not os.path.exists(data_folder):
-    st.error("Data folder not found. Please check your repository structure.")
-    st.stop()
-
-for filename in os.listdir(data_folder):
-    ...
 # ------------------------
 # Streamlit page config
 # ------------------------
@@ -29,6 +21,7 @@ st.markdown("""
     <p style='color:white;text-align:center'>Ask questions and get answers from your documents!</p>
 </div>
 """, unsafe_allow_html=True)
+
 # ------------------------
 # Sidebar
 # ------------------------
@@ -39,21 +32,27 @@ question_input = st.sidebar.text_input("Ask a question:")
 # Load documents
 # ------------------------
 st.title("🧠 AI Knowledge Hub")
+
+data_folder = os.path.join(os.path.dirname(__file__), "Data")
+
+if not os.path.exists(data_folder):
+    st.error("Data folder not found. Please check your repository structure.")
+    st.stop()
+
 with st.spinner("📦 Loading documents and building vector database..."):
     documents = []
-    data_folder = "Data"  # capital D — must match the repo folder exactly
     for filename in os.listdir(data_folder):
         if filename.endswith(".txt"):
             loader = TextLoader(os.path.join(data_folder, filename))
             docs = loader.load()
             documents.extend(docs)
 
-    # Split docs into chunks
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=20)
     chunks = text_splitter.split_documents(documents)
     texts = [chunk.page_content for chunk in chunks]
 
 st.success("✅ Vector DB ready!")
+
 # ------------------------
 # Embeddings & FAISS index
 # ------------------------
@@ -72,16 +71,10 @@ if "history" not in st.session_state:
     st.session_state.history = []
 
 if question_input:
-    # Embed question
     question_embedding = model.encode([question_input])
-
-    # Search top 3 chunks
     D, I = index.search(np.array(question_embedding), k=3)
-
-    # Combine context
     context = "\n".join([texts[i] for i in I[0]])
 
-    # Grounded prompt
     prompt = f"""
 You are an AI assistant. Answer the question ONLY using the context below.
 If the answer is not in the context, say "I don't know."
@@ -95,19 +88,16 @@ Question:
 Answer:
 """
 
-    # Call LLM
-client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+    client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+    response = client.chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[{"role": "user", "content": prompt}]
+    )
+    answer = response.choices[0].message.content  # ← only this, no answer_text
 
-response = client.chat.completions.create(
-    model="llama3-8b-8192",   # same Llama 3, hosted by Groq
-    messages=[{"role": "user", "content": prompt}]
-)
-answer = response.choices[0].message.content
-
-    # Save in history
     st.session_state.history.append({
         "question": question_input,
-        "answer": answer_text,
+        "answer": answer,
         "chunks": [chunks[i] for i in I[0]]
     })
 
