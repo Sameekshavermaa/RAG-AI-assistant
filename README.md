@@ -72,7 +72,7 @@ This technique is called **Retrieval-Augmented Generation (RAG)**.
 * LangChain
 * FAISS
 * Sentence Transformers
-* Ollama LLM
+* Groq
 
 ---
 
